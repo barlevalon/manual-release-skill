@@ -5,8 +5,7 @@ All notable changes to this package are documented here.
 ## Unreleased
 
 ### Added
-- Add customized `caveman-commit`, `grill-with-docs`, and `tdd` skills with per-skill package metadata and upstream license attribution.
-- Document that verbatim upstream skills and stale local copies are excluded.
+- Add customized `caveman-commit`, `grill-with-docs`, and `tdd` skills with per-skill package metadata and creator credits.
 
 ## [0.1.4] - 2026-06-06
 

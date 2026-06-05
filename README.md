@@ -5,8 +5,6 @@
 
 Portable Agent Skills for AI-assisted engineering workflows.
 
-This repo is a skills monorepo. It contains original skills plus locally customized forks of upstream skills whose licenses permit redistribution. Verbatim upstream skills and stale local copies are intentionally excluded.
-
 ## Skills
 
 ### Communication
@@ -78,12 +76,10 @@ skills/
 
 New skills should use `skills/<category>/<skill>/SKILL.md`, include a local `package.json`, and keep skill names globally unique.
 
-## Attribution and licensing
+## Credits
 
-Each skill directory includes its own `LICENSE` and README attribution. Customized forks currently included:
-
-- `caveman-commit`: derived from `JuliusBrussee/caveman` under MIT.
-- `grill-with-docs`, `tdd`: derived from `mattpocock/skills` under MIT.
+- `caveman-commit`: based on `JuliusBrussee/caveman` by Julius Brussee.
+- `grill-with-docs`, `tdd`: based on `mattpocock/skills` by Matt Pocock.
 
 ## Validation
 
@@ -100,4 +96,4 @@ npm run ci
 
 ## License
 
-MIT, except where individual skill directories declare a different license.
+MIT
