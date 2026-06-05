@@ -1,21 +1,27 @@
 # Usage
 
-This repo currently ships the `release-prep` skill for release preparation.
-It keeps release decisions evidence-backed and approval-gated.
+This package ships portable Agent Skills for AI-assisted engineering workflows.
+
+## Included skills
+
+- `caveman-commit` — release-aware terse commit messages.
+- `grill-with-docs` — stress-test plans against project language and documentation.
+- `tdd` — red-green-refactor implementation workflow.
+- `release-prep` — evidence-backed release preparation and approval-gated publishing plans.
 
 ## Install
 
 This package uses the portable Agent Skills layout:
 
 ```text
-skills/release/release-prep/SKILL.md
+skills/<category>/<skill>/SKILL.md
 ```
 
 Use whichever install path your agent harness supports.
 
 ### Generic
 
-Clone the repository and add `skills/` or `skills/release/release-prep` to your agent's skill paths.
+Clone the repository and add `skills/` or a specific skill directory to your agent's skill paths.
 
 ```bash
 git clone https://github.com/barlevalon/skills.git
@@ -29,9 +35,10 @@ Install all skills:
 @barlevalon/skills
 ```
 
-Install only this skill:
+Install only one skill:
 
 ```text
+@barlevalon/tdd-skill
 @barlevalon/release-prep-skill
 ```
 
@@ -39,51 +46,26 @@ Install only this skill:
 
 ```bash
 pi install npm:@barlevalon/skills
-pi install npm:@barlevalon/release-prep-skill
+pi install npm:@barlevalon/tdd-skill
 pi install git:github.com/barlevalon/skills
 pi install /path/to/skills
-pi install /path/to/skills/skills/release/release-prep
+pi install /path/to/skills/skills/engineering/tdd
 ```
 
-## Prompts
+## Example prompts
 
 ```text
-Prepare the next release.
-```
-
-```text
-Draft release notes since the last tag.
+Write a commit message for the staged changes.
 ```
 
 ```text
-Recommend the next SemVer bump and cite evidence.
+Use TDD to implement this bug fix.
 ```
 
 ```text
-Create a project-local release policy for this repo.
+Grill this plan against the domain docs before we build it.
 ```
 
 ```text
-Plan a hotfix release for this fix.
+Prepare the next release and recommend the SemVer bump.
 ```
-
-## Expected workflow
-
-1. The agent discovers local release policy and tooling.
-2. The agent identifies product boundaries and previous release tags.
-3. The agent classifies changes by user/operator impact.
-4. The agent recommends a version with evidence.
-5. The agent drafts changelog or release notes.
-6. The agent reports GO / CONDITIONAL / NO-GO readiness.
-7. The user explicitly approves any tag, push, publish, deploy, or release mutation.
-
-## Project-local policy
-
-For repeatable releases, ask the skill to create a local policy such as:
-
-```text
-docs/agents/release-workflow.md
-```
-
-That policy should capture repo-specific facts: product boundaries, tag format,
-changelog path, validation commands, publisher workflow, and rollback notes.

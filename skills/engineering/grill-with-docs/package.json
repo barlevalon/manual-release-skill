@@ -1,0 +1,41 @@
+{
+  "name": "@barlevalon/grill-with-docs-skill",
+  "version": "0.1.4",
+  "description": "Grilling session that challenges plans against the existing domain model, sharpens terminology, and updates CONTEXT.md/ADRs inline as decisions crystallise.",
+  "license": "MIT",
+  "author": "Alon Bar-Lev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barlevalon/skills.git",
+    "directory": "skills/engineering/grill-with-docs"
+  },
+  "bugs": {
+    "url": "https://github.com/barlevalon/skills/issues"
+  },
+  "homepage": "https://github.com/barlevalon/skills/tree/main/skills/engineering/grill-with-docs#readme",
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "ai-agent",
+    "engineering",
+    "grill-with-docs",
+    "pi",
+    "pi-package",
+    "skills"
+  ],
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "LICENSE",
+    "ADR-FORMAT.md",
+    "CONTEXT-FORMAT.md"
+  ],
+  "scripts": {
+    "pack:check": "npm pack --dry-run"
+  },
+  "pi": {
+    "skills": [
+      "./SKILL.md"
+    ]
+  }
+}
