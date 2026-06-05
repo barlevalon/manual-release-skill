@@ -6,6 +6,6 @@ All notable changes to this package are documented here.
 
 ### Added
 - Add `manual-release` skill for evidence-backed manual release preparation.
-- Add Pi package manifest for npm and git installation.
+- Add Agent Skill package manifest for npm and git installation.
 - Add CI validation and npm publish workflow.
 - Add usage and maintainer release documentation.

@@ -5,22 +5,36 @@ It keeps release decisions evidence-backed and approval-gated.
 
 ## Install
 
-From npm:
+This package uses the portable Agent Skills layout:
 
-```bash
-pi install npm:pi-manual-release
+```text
+skills/manual-release/SKILL.md
 ```
 
-From GitHub:
+Use whichever install path your agent harness supports.
+
+### Generic
+
+Clone the repository and add `skills/manual-release` to your agent's skill directory or configured skill paths.
 
 ```bash
-pi install git:github.com/barlevalon/pi-manual-release@v0.1.0
+git clone https://github.com/barlevalon/manual-release-skill.git
 ```
 
-From a local checkout:
+### npm package
+
+After npm publish, use the package name with compatible tooling:
+
+```text
+manual-release-skill
+```
+
+### Pi
 
 ```bash
-pi install /path/to/pi-manual-release
+pi install npm:manual-release-skill
+pi install git:github.com/barlevalon/manual-release-skill@v0.1.0
+pi install /path/to/manual-release-skill
 ```
 
 ## Prompts

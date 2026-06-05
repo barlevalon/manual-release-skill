@@ -1,9 +1,9 @@
-# pi-manual-release
+# manual-release-skill
 
-[![CI](https://github.com/barlevalon/pi-manual-release/actions/workflows/ci.yml/badge.svg)](https://github.com/barlevalon/pi-manual-release/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/pi-manual-release.svg)](https://www.npmjs.com/package/pi-manual-release)
+[![CI](https://github.com/barlevalon/manual-release-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/barlevalon/manual-release-skill/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/manual-release-skill.svg)](https://www.npmjs.com/package/manual-release-skill)
 
-A small [Pi](https://pi.dev/) / Agent Skills package for AI-assisted manual software releases.
+A universal Agent Skill for AI-assisted manual software releases.
 
 It helps agents prepare releases from repository evidence instead of blindly deriving release meaning from commit-message automation.
 
@@ -26,27 +26,48 @@ It helps agents prepare releases from repository evidence instead of blindly der
 
 ## Install
 
-From npm:
+This repo uses the portable Agent Skills layout:
 
-```bash
-pi install npm:pi-manual-release
+```text
+skills/manual-release/SKILL.md
 ```
 
-From GitHub:
+Any Agent Skills-compatible harness can load that skill directory.
+
+### npm
 
 ```bash
-pi install git:github.com/barlevalon/pi-manual-release@v0.1.0
+npm pack manual-release-skill
+```
+
+Or install through a harness that supports npm skill packages.
+
+### Git
+
+```bash
+git clone https://github.com/barlevalon/manual-release-skill.git
+```
+
+Then point your agent harness at `skills/manual-release` or the package root, depending on its skill-loading rules.
+
+### Pi
+
+Pi can install the package directly:
+
+```bash
+pi install npm:manual-release-skill
+pi install git:github.com/barlevalon/manual-release-skill@v0.1.0
 ```
 
 Try from a local checkout:
 
 ```bash
-pi -e ./pi-manual-release
+pi -e ./manual-release-skill
 ```
 
 ## Use
 
-Ask Pi something like:
+Ask your agent something like:
 
 ```text
 Prepare a release.
@@ -80,7 +101,7 @@ The skill loads as `manual-release`.
 skills/manual-release/SKILL.md
 ```
 
-The package declares the skill through `package.json`:
+The package also declares Pi compatibility through `package.json`:
 
 ```json
 {
@@ -89,6 +110,8 @@ The package declares the skill through `package.json`:
   }
 }
 ```
+
+Other Agent Skills-compatible tools can ignore that field and load the standard `skills/` directory.
 
 ## Documentation
 

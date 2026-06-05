@@ -12,14 +12,15 @@ const exists = (file) => fs.existsSync(path.join(root, file));
 
 const pkg = readJson('package.json');
 
-if (pkg.name !== 'pi-manual-release') fail('package name must be pi-manual-release');
-if (!pkg.keywords?.includes('pi-package')) fail('package keywords must include pi-package');
-if (!pkg.pi || !Array.isArray(pkg.pi.skills) || pkg.pi.skills.length === 0) {
-  fail('package.json must declare pi.skills');
+if (pkg.name !== 'manual-release-skill') fail('package name must be manual-release-skill');
+if (!pkg.keywords?.includes('agent-skills')) fail('package keywords must include agent-skills');
+if (!pkg.keywords?.includes('pi-package')) fail('package keywords must include pi-package for Pi gallery compatibility');
+if (pkg.pi && (!Array.isArray(pkg.pi.skills) || pkg.pi.skills.length === 0)) {
+  fail('package.json pi compatibility metadata must declare pi.skills when present');
 }
 
 for (const skillPath of pkg.pi?.skills ?? []) {
-  if (!exists(skillPath)) fail(`pi skill path does not exist: ${skillPath}`);
+  if (!exists(skillPath)) fail(`declared skill path does not exist: ${skillPath}`);
 }
 
 const skillFile = 'skills/manual-release/SKILL.md';
