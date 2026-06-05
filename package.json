@@ -1,0 +1,38 @@
+{
+  "name": "pi-manual-release",
+  "version": "0.1.0",
+  "description": "A Pi/Agent Skills package for AI-assisted manual software releases with evidence-backed changelogs and approval-gated publishing.",
+  "license": "MIT",
+  "author": "Alon Bar-Lev",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barlevalon/pi-manual-release.git"
+  },
+  "bugs": {
+    "url": "https://github.com/barlevalon/pi-manual-release/issues"
+  },
+  "homepage": "https://github.com/barlevalon/pi-manual-release#readme",
+  "keywords": [
+    "pi-package",
+    "agent-skills",
+    "pi",
+    "manual-release",
+    "release-management",
+    "changelog",
+    "release-notes",
+    "semver"
+  ],
+  "files": [
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "pack:check": "npm pack --dry-run"
+  },
+  "pi": {
+    "skills": [
+      "./skills"
+    ]
+  }
+}
