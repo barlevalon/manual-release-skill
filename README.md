@@ -63,7 +63,7 @@ See [docs/workflow.md](docs/workflow.md) for the fuller map.
 
 ## Docs
 
-- [Setup](docs/setup.md)
+- [Setup](docs/setup.md) — includes opencode and VS Code examples
 - [Workflow map](docs/workflow.md)
 - [Skill reference](docs/usage.md)
 - [All docs](docs/README.md)
