@@ -2,12 +2,44 @@
 
 This is the quick lookup page. For a guided decision tree, read [workflow.md](workflow.md). For installation and editor setup, read [setup.md](setup.md).
 
+## Install
+
+Install the full bundle:
+
+```bash
+npm install @barlevalon/skills
+```
+
+Install one skill package:
+
+```bash
+npm install @barlevalon/tdd-skill
+```
+
 ## Loading model
 
-A skill lives at:
+Tools with npm skill-package support can load the bundle by package name:
+
+```text
+@barlevalon/skills
+```
+
+For file-based tools, a skill in a repo checkout lives at:
 
 ```text
 skills/<category>/<skill>/SKILL.md
+```
+
+After installing the full npm bundle, the same skill is available under:
+
+```text
+node_modules/@barlevalon/skills/skills/<category>/<skill>/SKILL.md
+```
+
+After installing a single-skill npm package, it is available under:
+
+```text
+node_modules/@barlevalon/<skill-name>-skill/SKILL.md
 ```
 
 Some skills also include supporting files in the same directory. If a `SKILL.md` links to local references or scripts, load the whole skill directory when your tool supports it.

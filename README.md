@@ -19,18 +19,24 @@ These skills are plain Markdown instructions. Use them with any agent harness, e
 
 ## Quick start
 
-1. Get the skills.
+1. Install the bundle.
 
    ```bash
-   git clone https://github.com/barlevalon/skills.git
+   npm install @barlevalon/skills
    ```
 
-2. Point your agent/editor/harness at one of these:
+2. Use the skills.
+
+   Tools with npm skill-package support can load the bundle by package name:
 
    ```text
-   skills/                         # all skills
-   skills/engineering/tdd/SKILL.md # one skill
-   docs/workflow.md                # which skill to use when
+   @barlevalon/skills
+   ```
+
+   Tools that work from files can use the installed `SKILL.md` files under:
+
+   ```text
+   node_modules/@barlevalon/skills/skills/
    ```
 
 3. Ask for the workflow by name:
@@ -47,7 +53,7 @@ These skills are plain Markdown instructions. Use them with any agent harness, e
    Prepare the next release and recommend the SemVer bump.
    ```
 
-See [Setup guide](docs/setup.md) for npm, Pi, local checkout, copy/paste, and editor-rule options.
+See [Setup guide](docs/setup.md) for single-skill installs, Pi, Git checkout, copy/paste, and editor-rule options.
 
 ## Workflow map
 

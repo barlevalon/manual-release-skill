@@ -10,7 +10,56 @@ You can use the skills with any agent harness or editor that supports one of the
 - attaching files as context,
 - copying a prompt into a chat.
 
-## Option 1: Use a Git checkout
+## Option 1: Install from npm
+
+Best for most users.
+
+Install the full bundle in a project or scratch directory:
+
+```bash
+npm install @barlevalon/skills
+```
+
+Tools with npm skill-package support can use the package name directly:
+
+```text
+@barlevalon/skills
+```
+
+Tools that work from files can use the installed files:
+
+```text
+node_modules/@barlevalon/skills/skills/                         # all skills
+node_modules/@barlevalon/skills/skills/engineering/tdd/SKILL.md # one skill
+node_modules/@barlevalon/skills/docs/workflow.md                # which skill to use when
+```
+
+Install one skill package when you only need a small workflow:
+
+```bash
+npm install @barlevalon/tdd-skill
+npm install @barlevalon/release-prep-skill
+```
+
+Single-skill packages can be used by package name when your tool supports it:
+
+```text
+@barlevalon/tdd-skill
+```
+
+Or by installed file path:
+
+```text
+node_modules/@barlevalon/tdd-skill/SKILL.md
+```
+
+Package names follow this pattern:
+
+```text
+@barlevalon/<skill-name>-skill
+```
+
+## Option 2: Use a Git checkout
 
 Best for browsing, editing, and tools that can load files from disk.
 
@@ -28,36 +77,6 @@ skills/release/release-prep/    # one skill plus support files
 ```
 
 If your tool only accepts text instructions, open the relevant `SKILL.md` and paste or import its contents.
-
-## Option 2: Load from npm packages
-
-Best for harnesses that understand npm skill packages.
-
-Use your harness's npm/package command with the full bundle:
-
-```text
-@barlevalon/skills
-```
-
-Or load one skill package when you only need a small workflow:
-
-```text
-@barlevalon/tdd-skill
-@barlevalon/release-prep-skill
-```
-
-Package names follow this pattern:
-
-```text
-@barlevalon/<skill-name>-skill
-```
-
-To inspect package metadata with npm itself:
-
-```bash
-npm view @barlevalon/skills
-npm view @barlevalon/tdd-skill
-```
 
 ## Option 3: Pi install commands
 

@@ -4,10 +4,14 @@ All notable changes to this package are documented here.
 
 ## Unreleased
 
+## [0.3.0] - 2026-06-08
+
 ### Added
-- Expand the repository into a comprehensive workflow bundle of local skills.
+- Expand the repository into a comprehensive workflow bundle of public skills.
+- Add setup, workflow, and usage documentation for harness-neutral skill loading.
 
 ### Changed
+- Make npm installation the default quickstart path.
 - Clarify that root and individual skill package versions are released independently.
 
 ## [0.2.0] - 2026-06-06
