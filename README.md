@@ -3,97 +3,115 @@
 [![CI](https://github.com/barlevalon/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/barlevalon/skills/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/%40barlevalon%2Fskills.svg)](https://www.npmjs.com/package/@barlevalon/skills)
 
-Portable Agent Skills for AI-assisted engineering workflows.
+Portable `SKILL.md` workflows for AI-assisted engineering: planning, debugging, TDD, review, documentation, handoff, and release prep.
+
+These skills are plain Markdown instructions. Use them with any agent harness, editor, or chat workflow that can load files, install packages, or accept custom instructions. The npm packages include Pi metadata, but the skills are not Pi-only.
+
+## Start here
+
+| If you want to... | Read this |
+|---|---|
+| Install or load the skills | [Setup guide](docs/setup.md) |
+| Decide which skill to use | [Workflow guide](docs/workflow.md) |
+| Look up every skill quickly | [Usage reference](docs/usage.md) |
+| Browse all documentation | [Docs index](docs/README.md) |
+| Release or maintain this package | [Maintainer release process](docs/release.md) |
+
+## Quick start
+
+1. Get the skills.
+
+   ```bash
+   git clone https://github.com/barlevalon/skills.git
+   ```
+
+2. Point your agent/editor/harness at one of these:
+
+   ```text
+   skills/                         # all skills
+   skills/engineering/tdd/SKILL.md # one skill
+   docs/workflow.md                # which skill to use when
+   ```
+
+3. Ask for the workflow by name:
+
+   ```text
+   Use TDD to implement this change.
+   ```
+
+   ```text
+   Diagnose this failure before fixing it.
+   ```
+
+   ```text
+   Prepare the next release and recommend the SemVer bump.
+   ```
+
+See [Setup guide](docs/setup.md) for npm, Pi, local checkout, copy/paste, and editor-rule options.
+
+## Workflow map
+
+| Situation | Skills to reach for |
+|---|---|
+| New feature, fuzzy idea | `write-a-prd`, `grill-with-docs`, `prd-to-plan`, `prototype` |
+| Bug or regression | `diagnose`, then `tdd` |
+| Behavior change | `tdd` |
+| Architecture feels tangled | `improve-codebase-architecture`, `zoom-out` |
+| Strict review | `thermo-nuclear-code-quality-review` |
+| Visual explanation or plan review | `plannotator-visual-explainer`, `plannotator-setup-goal`, `plannotator-compound` |
+| Docs work | `documentation-system` |
+| Release prep | `release-prep` |
+| Commit message or concise communication | `caveman-commit`, `caveman`, `caveman-help` |
+| Session handoff | `handoff` |
+| Find more capabilities | `find-skills` |
 
 ## Skills
 
 ### Communication
 
-- [`caveman`](skills/communication/caveman/SKILL.md) — Ultra-compressed communication mode. Cuts token usage ~75% by speaking like caveman while keeping full technical accuracy. Supports intensit…
-- [`caveman-commit`](skills/communication/caveman-commit/SKILL.md) — Ultra-compressed commit message generator. Uses release-aware scoped commit subjects: scope-first by default, optional Conventional Commit t…
-- [`caveman-help`](skills/communication/caveman-help/SKILL.md) — Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode
+- [`caveman`](skills/communication/caveman/SKILL.md) — concise communication mode.
+- [`caveman-commit`](skills/communication/caveman-commit/SKILL.md) — compact, release-aware commit messages.
+- [`caveman-help`](skills/communication/caveman-help/SKILL.md) — quick reference for caveman modes.
 
 ### Discovery
 
-- [`find-skills`](skills/discovery/find-skills/SKILL.md) — Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can
+- [`find-skills`](skills/discovery/find-skills/SKILL.md) — find installable skills for a task.
 
 ### Documentation
 
-- [`documentation-system`](skills/documentation/documentation-system/SKILL.md) — Apply Divio's four-quadrant documentation system to write, audit, classify, restructure, and review technical documentation
+- [`documentation-system`](skills/documentation/documentation-system/SKILL.md) — write, classify, audit, and restructure docs using the Divio model.
 
 ### Engineering
 
-- [`diagnose`](skills/engineering/diagnose/SKILL.md) — Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-tes…
-- [`grill-with-docs`](skills/engineering/grill-with-docs/SKILL.md) — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates documentation (CONTEXT.md, A…
-- [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) — Find deepening opportunities in a codebase, informed by the domain language in CONTEXT.md and the decisions in docs/adr/
-- [`prd-to-plan`](skills/engineering/prd-to-plan/SKILL.md) — Turn a PRD into a multi-phase implementation plan using tracer-bullet vertical slices, saved as a local Markdown file in ./plans/
-- [`prototype`](skills/engineering/prototype/SKILL.md) — Build a throwaway prototype to flesh out a design before committing to it. Routes between two branches — a runnable terminal app for state/b…
-- [`tdd`](skills/engineering/tdd/SKILL.md) — Test-driven development with red-green-refactor loop
-- [`worktrunk`](skills/engineering/worktrunk/SKILL.md) — Use Worktrunk for git worktree workflows whenever working in a git repository. Prefer `wt` over manual branch/worktree lifecycle commands wh…
-- [`write-a-prd`](skills/engineering/write-a-prd/SKILL.md) — Create a PRD through user interview, codebase exploration, and module design
-- [`zoom-out`](skills/engineering/zoom-out/SKILL.md) — Tell the agent to zoom out and give broader context or a higher-level perspective
+- [`diagnose`](skills/engineering/diagnose/SKILL.md) — disciplined bug/performance diagnosis loop.
+- [`grill-with-docs`](skills/engineering/grill-with-docs/SKILL.md) — stress-test a plan against domain docs and ADRs.
+- [`improve-codebase-architecture`](skills/engineering/improve-codebase-architecture/SKILL.md) — find deeper modules and better seams.
+- [`prd-to-plan`](skills/engineering/prd-to-plan/SKILL.md) — turn a PRD into tracer-bullet implementation phases.
+- [`prototype`](skills/engineering/prototype/SKILL.md) — build a throwaway prototype to test a design.
+- [`tdd`](skills/engineering/tdd/SKILL.md) — red/green/refactor implementation loop.
+- [`worktrunk`](skills/engineering/worktrunk/SKILL.md) — branch and worktree workflow using Worktrunk.
+- [`write-a-prd`](skills/engineering/write-a-prd/SKILL.md) — interview, explore, and write a PRD.
+- [`zoom-out`](skills/engineering/zoom-out/SKILL.md) — ask for broader context before changing code.
 
 ### Evaluation
 
-- [`thermo-nuclear-code-quality-review`](skills/evaluation/thermo-nuclear-code-quality-review/SKILL.md) — Run an extremely strict maintainability review for abstraction quality, giant files, and spaghetti-condition growth
+- [`thermo-nuclear-code-quality-review`](skills/evaluation/thermo-nuclear-code-quality-review/SKILL.md) — strict maintainability review.
 
 ### Handoff
 
-- [`handoff`](skills/handoff/handoff/SKILL.md) — Compact the current conversation into a handoff document for another agent to pick up
+- [`handoff`](skills/handoff/handoff/SKILL.md) — compact a session for another agent.
 
 ### Release
 
-- [`release-prep`](skills/release/release-prep/SKILL.md) — AI-assisted release preparation workflow for software repos
+- [`release-prep`](skills/release/release-prep/SKILL.md) — plan and validate a release without pushing/publishing by accident.
 
 ### Review
 
-- [`plannotator-compound`](skills/review/plannotator-compound/SKILL.md) — Analyze a user's Plannotator plan archive to extract denial patterns, feedback taxonomy, evolution over time, and actionable prompt improvem…
-- [`plannotator-setup-goal`](skills/review/plannotator-setup-goal/SKILL.md) — Turn an idea or objective into a goal package for /goal
-- [`plannotator-visual-explainer`](skills/review/plannotator-visual-explainer/SKILL.md) — Generate self-contained HTML visualizations with Plannotator theming
+- [`plannotator-compound`](skills/review/plannotator-compound/SKILL.md) — analyze rejected planning feedback and improve future prompts.
+- [`plannotator-setup-goal`](skills/review/plannotator-setup-goal/SKILL.md) — turn an objective into a reviewed goal package.
+- [`plannotator-visual-explainer`](skills/review/plannotator-visual-explainer/SKILL.md) — create self-contained HTML visual explanations.
 
-## Install
-
-### npm
-
-Install all skills:
-
-```bash
-pi install npm:@barlevalon/skills
-```
-
-Install one skill:
-
-```bash
-pi install npm:@barlevalon/tdd-skill
-pi install npm:@barlevalon/release-prep-skill
-```
-
-Packages declare Pi compatibility through `package.json`:
-
-```json
-{
-  "pi": {
-    "skills": ["./skills/*/*/SKILL.md"]
-  }
-}
-```
-
-### Git
-
-```bash
-git clone https://github.com/barlevalon/skills.git
-```
-
-Then point your agent harness at the package root, `skills/`, or a specific skill directory such as `skills/engineering/tdd`.
-
-### Local checkout
-
-```bash
-pi -e .
-pi -e ./skills/engineering/tdd
-```
-
-## Layout
+## Package layout
 
 ```text
 skills/
@@ -116,20 +134,12 @@ New skills should use `skills/<category>/<skill>/SKILL.md`, include a local `pac
 - `thermo-nuclear-code-quality-review`: based on `cursor/plugins` by Cursor.
 - `plannotator-*`: based on `backnotprop/plannotator` by backnotprop.
 
-## Validation
+## Validate
 
 ```bash
 npm ci
 npm run ci
 ```
-
-## Documentation
-
-- [Setup guide](docs/setup.md)
-- [Workflow guide](docs/workflow.md)
-- [Usage quick reference](docs/usage.md)
-- [Maintainer release process](docs/release.md)
-- [Changelog](CHANGELOG.md)
 
 ## License
 
